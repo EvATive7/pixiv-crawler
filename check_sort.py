@@ -20,19 +20,11 @@ def check_sort_order(directory):
     # 按修改时间排序
     files_by_time = sorted(files, key=lambda x: x[1])
 
-    # 输出排序后的文件名
-    print("按文件名排序:")
-    for file in files_by_name:
-        print(file[0])
-
-    print("\n按修改时间排序:")
-    for file in files_by_time:
-        print(file[0])
-
-    # 检查两个排序结果是否相同
-    same_order = [file[0] for file in files_by_name] == [
-        file[0] for file in files_by_time
-    ]
+    same_order = True
+    for i in range(len(files_by_name)):
+        print(f"{i}: {files_by_name[i][0]} - {files_by_time[i][0]}")
+        if files_by_name[i][0] != files_by_time[i][0]:
+            same_order = False
 
     if same_order:
         print("\n文件名排序和修改时间排序结果相同。")
