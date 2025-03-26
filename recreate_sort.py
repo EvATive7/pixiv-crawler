@@ -1,12 +1,7 @@
-import datetime
-import os
-import re
-from pathlib import Path
 import time
+from pathlib import Path
 
-import piexif
 from natsort import natsorted
-from PIL import Image
 
 
 def modify_exif_in_folder(ori_folder_path, dst_folder_path):
@@ -29,6 +24,6 @@ def modify_exif_in_folder(ori_folder_path, dst_folder_path):
         print(f"{file} recreated")
 
 
-folder_path = "./edited"  # 修改为你的文件夹路径
-dst_folder_path = "./sorted"  # 修改为你的文件夹路径
+folder_path = "./.origin"  # 修改为你的文件夹路径
+dst_folder_path = "./.sorted"  # 修改为你的文件夹路径
 modify_exif_in_folder(folder_path, dst_folder_path)
